@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Priced Out: Rising Cost of Housing in Los Angeles County</title>
+    
+    <!-- ArcGIS -->
+    <script type="module" src="https://js.arcgis.com/map-components/4.29/arcgis-map-components.esm.js"></script>
+    
+    <!-- Mapbox -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css' rel='stylesheet' />
+    
+    <style>
+        body {
+            font-family: Times New Roman, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #555;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 600px;
+            margin-top: 15px;
+        }
+
+        #mapbox-map {
+            width: 100%;
+            height: 600px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Priced Out: Rising Cost of Housing in Los Angeles County</h1>
+        <p>Kennedy Schneider | GIS 661 Final Project</p>
+    </header>
+
+    <nav>
+        <a href="#overview">Project Overview</a>
+        <a href="#housing">Housing Prices</a>
+        <a href="#income">Income Changes</a>
+        <a href="#sources">Sources</a>
+    </nav>
+
+    <div class="container">
+        <!-- Overview -->
+        <section id="overview">
+            <h2>Project Overview</h2>
+            <p>
+                We are currently in a hosuing affordability crisis with the gap rapidly increasing. Increasing housing costs are moving faster than increases of income. This makes it harder for people to purchase homes or find affordable rent in California. This project higlight the affordabiity crisis in Los Angeles and how much prices have changed in just 4-5 years. This project looks at prices of homes and incomes between the years 2020 and 2024. The cost of housing increased between 20-30% however, income only increased by 7-10% thus, hihglighting the affordability crisis further. 
+            </p>
+        </section>
+
+        <!-- Housing Prices Map -->
+       <!-- Housing Prices Map -->
+<section id="housing">
+    <h2>Housing Price Changes (ArcGIS Online)</h2>
+    <p>
+        This map shows median home prices across 10 LA County cities. Toggle between the 2020 
+        and 2024 layers to see the dramatic price increases.
+    </p>
+    
+    <div class="map-container">
+        <!-- Housing Prices Map -->
+<section id="housing">
+    <h2>Housing Price Changes (ArcGIS Online)</h2>
+    <p>
+        This map shows median home prices across 10 LA County cities. Toggle between the 2020 
+        and 2024 layers to see the dramatic price increases.
+    </p>
+    
+    <div class="map-container">
+        <iframe width="700" height="500" allow="local-network-access; geolocation" title="LA Housing 2020 vs. 2024_2" src="https://univredlands.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=835b2a233361443685a72677db1c1002&theme=light&scroll=false&center=-118.33582895324243,33.9317191339905&scale=288895.2771445" >
+        </iframe>
+    </div>
+</section>
+    </div>
+</section>
+
+        <!-- Income Changes Map -->
+        <section id="income">
+            <h2>Income Changes (Mapbox)</h2>
+            <p>
+                This map visualizes how median household incomes changed from 2020 to 2024. 
+                Click on any city to see detailed income data.
+            </p>
+            
+            <div id="mapbox-map"></div>
+        </section>
+
+        <!-- Key Findings -->
+        <section id="findings">
+            <h2>Important Info:</h2>
+            <ul>
+                <li><strong>Los Angeles:</strong> Home prices rose from $697K to $815K: 17% increase</li>
+                <li><strong>Beverly Hills:</strong> Prices jumped from $1.58M to $1.82M: 15% increase</li>
+                <li><strong>Compton:</strong> Even affordable areas saw increases from $418K to $485K: 16% increase</li>
+                <li><strong>Income Growth:</strong> Income from 2020 to 2024 only increased 7-10%</li>
+                <li><strong>Affordability Gap:</strong> Housing costs grew 2-3x faster than incomes</li>
+            </ul>
+        </section>
+
+        <!-- Data Sources -->
+        <section id="sources">
+            <h2>Data Sources</h2>
+            <p>
+                <strong>Home Values & Income:</strong> U.S. Census Bureau, American Community Survey 
+                5-Year Estimates (2016-2020 and 2019-2023), Tables B25077 and S1901. 
+                Retrieved from <a href="https://data.census.gov/" target="_blank">data.census.gov</a>
+            </p>
+            <p>
+                <strong>Coordinates:</strong> U.S. Census Bureau TIGER/Line Shapefiles, verified with Google Maps
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>GIS 661 Fall 2025 | University of Redlands</p>
+        <p>Built with ArcGIS Online, Mapbox, and GitHub Pages</p>
+    </footer>
+
+    <!-- Mapbox Script -->
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoia2VubmVkeTcyNjk4IiwiYSI6ImNtZzRyZDFudDE5ajMyaXExbXFnZnM5amIifQ.aWC4Gf7NlWoXesD0IXs3eg';
+        
+        const map = new mapboxgl.Map({
+            container: 'mapbox-map',
+            style: 'mapbox://styles/kennedy72698/cmimqhfyi00a101st6v6e6wg6',
+            center: [-118.2437, 34.0522],
+            zoom: 9
+        });
+        
+        map.addControl(new mapboxgl.NavigationControl());
+        
+        const incomeData = {
+            "type": "FeatureCollection",
+            "features": [
+                {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-118.2437, 34.0522]}, 
+                 "properties": {"City": "Los Angeles", "Income2020": 65290, "Income2024": 69778, "Change": 4488}},
+                {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-118.4005, 34.0736]}, 
+                 "properties": {"City": "Beverly Hills", "Income2020": 86122, "Income2024": 95000, "Change": 8878}},
+                {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-118.4912, 34.0195]}, 
+                 "properties": {"City": "Santa Monica", "Income2020": 83000, "Income2024": 92000, "Change": 9000}},
+                {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-118.1937, 33.7701]}, 
+                 "properties": {"City": "Long Beach", "Income2020": 63017, "Income2024": 70000, "Change": 6983}},
+                {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-118.1445, 34.1478]}, 
+                 "properties": {"City": "Pasadena", "Income2020": 83068, "Income2024": 91000, "Change": 7932}},
+                {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-118.2201, 33.8958]}, 
+                 "properties": {"City": "Compton", "Income2020": 49246, "Income2024": 54000, "Change": 4754}},
+                {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-118.3406, 33.8358]}, 
+                 "properties": {"City": "Torrance", "Income2020": 85070, "Income2024": 93000, "Change": 7930}},
+                {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-118.2551, 34.1425]}, 
+                 "properties": {"City": "Glendale", "Income2020": 66130, "Income2024": 73000, "Change": 6870}},
+                {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-118.3531, 33.9617]}, 
+                 "properties": {"City": "Inglewood", "Income2020": 54800, "Income2024": 60000, "Change": 5200}},
+                {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-118.3089, 34.1808]}, 
+                 "properties": {"City": "Burbank", "Income2020": 72695, "Income2024": 80000, "Change": 7305}}
+            ]
+        };
+        
+        map.on('load', () => {
+            map.addSource('income', {
+                'type': 'geojson',
+                'data': incomeData
+            });
+            
+            map.addLayer({
+                'id': 'income-circles',
+                'type': 'circle',
+                'source': 'income',
+                'paint': {
+                    'circle-radius': 15,
+                    'circle-color': [
+                        'interpolate', ['linear'], ['get', 'Change'],
+                        4000, '#3288bd',
+                        7000, '#fee08b',
+                        9000, '#d53e4f'
+                    ],
+                    'circle-stroke-width': 2,
+                    'circle-stroke-color': '#fff'
+                }
+            });
+            
+            map.on('click', 'income-circles', (e) => {
+                const props = e.features[0].properties;
+                new mapboxgl.Popup()
+                    .setLngLat(e.lngLat)
+                    .setHTML(`
+                        <h3>${props.City}</h3>
+                        <p><b>2020:</b> $${props.Income2020.toLocaleString()}</p>
+                        <p><b>2024:</b> $${props.Income2024.toLocaleString()}</p>
+                        <p><b>Change:</b> +$${props.Change.toLocaleString()}</p>
+                    `)
+                    .addTo(map);
+            });
+            
+            map.on('mouseenter', 'income-circles', () => {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+            
+            map.on('mouseleave', 'income-circles', () => {
+                map.getCanvas().style.cursor = '';
+            });
+        });
+    </script>
+</body>
+</html>
