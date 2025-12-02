@@ -5,24 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Priced Out: Rising Cost of Housing in Los Angeles County</title>
     
-    <!-- ArcGIS -->
-    <script type="module" src="https://js.arcgis.com/map-components/4.29/arcgis-map-components.esm.js"></script>
     
-    <!-- Mapbox -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css' rel='stylesheet' />
     
     <style>
         body {
-            font-family: Times New Roman, sans-serif;
+            font-family: Georgia, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: lavender;
         }
 
         header {
-            background-color: #333;
-            color: white;
+            background-color: lavender;
+            color: black;
             padding: 2rem;
             text-align: center;
         }
@@ -68,13 +65,13 @@
 
         .map-container {
             width: 100%;
-            height: 600px;
+            height: 700px;
             margin-top: 15px;
         }
 
         #mapbox-map {
             width: 100%;
-            height: 600px;
+            height: 700px;
         }
 
         footer {
@@ -94,59 +91,52 @@
     </header>
 
     <nav>
-        <a href="#overview">Project Overview</a>
+        <a href="#overview">Project Introduction</a>
         <a href="#housing">Housing Prices</a>
         <a href="#income">Income Changes</a>
         <a href="#sources">Sources</a>
     </nav>
 
     <div class="container">
-        <!-- Overview -->
+        
         <section id="overview">
             <h2>Project Overview</h2>
             <p>
-                We are currently in a hosuing affordability crisis with the gap rapidly increasing. Increasing housing costs are moving faster than increases of income. This makes it harder for people to purchase homes or find affordable rent in California. This project higlight the affordabiity crisis in Los Angeles and how much prices have changed in just 4-5 years. This project looks at prices of homes and incomes between the years 2020 and 2024. The cost of housing increased between 20-30% however, income only increased by 7-10% thus, hihglighting the affordability crisis further. 
+              We are currently in a housing affordability crisis with the cost of living rapidly increasing. This makes it harder for people to purchase homes and afford daily neccesities. Los Angeles County is expereincing a major housing affordability crisis. This crisis is taking place all over the state of California, however this project focuses on 10 major cities in Los Angeles County. Between 2020 and 2024, there has been a 15-20% increase of median home prices however incomes only grew to 7-10%. This creates a larger affordability gap because it makes homeownership out of reach for many of the residents who live there. The maps below examine the affordability crisis across 10 cities in LA county that compare median home values and household incomes from the years 2020 and 2024. This shows how rapidly housing costs and rising costs compare to the growth of income, worsening the financial strain that affect families and communities throughout Los Angeles County. 
             </p>
         </section>
 
-        <!-- Housing Prices Map -->
-       <!-- Housing Prices Map -->
+   
+       
 <section id="housing">
-    <h2>Housing Price Changes (ArcGIS Online)</h2>
+    <h2>LA Housing 2020 vs. 2024</h2>
     <p>
-        This map shows median home prices across 10 LA County cities. Toggle between the 2020 
-        and 2024 layers to see the dramatic price increases.
+        This map shows 2020 and 2024 Housing Costs as well as median household income and median mortgage costs. Darker circles indicate high prices as well as the difference between 2020 and 2024. The diamond symbol shows the median mortgage cost between 2020 and 2024. 
     </p>
     
     <div class="map-container">
-        <!-- Housing Prices Map -->
+        
 <section id="housing">
-    <h2>Housing Price Changes (ArcGIS Online)</h2>
-    <p>
-        This map shows median home prices across 10 LA County cities. Toggle between the 2020 
-        and 2024 layers to see the dramatic price increases.
-    </p>
     
     <div class="map-container">
-        <iframe width="700" height="500" allow="local-network-access; geolocation" title="LA Housing 2020 vs. 2024_2" src="https://univredlands.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=835b2a233361443685a72677db1c1002&theme=light&scroll=false&center=-118.33582895324243,33.9317191339905&scale=288895.2771445" >
+        <iframe width="700" height="700" allow="local-network-access; geolocation" title="LA Housing 2020 vs. 2024_2" src="https://univredlands.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=835b2a233361443685a72677db1c1002&theme=light&scroll=false&center=-118.33582895324243,33.9317191339905&scale=288895.2771445" >
         </iframe>
     </div>
 </section>
     </div>
 </section>
 
-        <!-- Income Changes Map -->
+        
         <section id="income">
-            <h2>Income Changes (Mapbox)</h2>
+            <h2>Income Changes </h2>
             <p>
-                This map visualizes how median household incomes changed from 2020 to 2024. 
-                Click on any city to see detailed income data.
+                This map shows the change in median household incomes from 2020 to 2024. Click on a city to see the change in income from 2020 t0 2024. Higher incomes are in red, lower are in orange and yellow. 
             </p>
             
             <div id="mapbox-map"></div>
         </section>
 
-        <!-- Key Findings -->
+        
         <section id="findings">
             <h2>Important Info:</h2>
             <ul>
@@ -158,23 +148,23 @@
             </ul>
         </section>
 
-        <!-- Data Sources -->
+        
         <section id="sources">
             <h2>Data Sources</h2>
             <p>
                 <strong>Home Values & Income:</strong> U.S. Census Bureau, American Community Survey 
                 5-Year Estimates (2016-2020 and 2019-2023), Tables B25077 and S1901. 
-                Retrieved from <a href="https://data.census.gov/" target="_blank">data.census.gov</a>
+                From <a href="https://data.census.gov/" target="_blank">data.census.gov</a>
             </p>
             <p>
-                <strong>Coordinates:</strong> U.S. Census Bureau TIGER/Line Shapefiles, verified with Google Maps
+                <strong>Coordinates:</strong> Google Maps
             </p>
         </section>
     </div>
 
     <footer>
         <p>GIS 661 Fall 2025 | University of Redlands</p>
-        <p>Built with ArcGIS Online, Mapbox, and GitHub Pages</p>
+        <p>Kennedy Schneider</p>
     </footer>
 
     <!-- Mapbox Script -->
@@ -262,6 +252,6 @@
         });
     </script>
 </body>
-
 </html>
+
 
